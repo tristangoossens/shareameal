@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MealDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:id="@+id/meal_image"
+            android:layout_width="202dp"
+            android:layout_height="163dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="7dp">
+
+            <TextView
+                android:id="@+id/meal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meal_name"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View style="@style/seperator"
+                android:layout_marginVertical="3dp" />
+
+            <TextView
+                android:id="@+id/meal_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meal_price"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/meal_list_detail_button"
+                android:layout_width="114dp"
+                android:layout_height="35dp"
+                android:text="@string/meal_signup"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView style="@style/section_header"
+            android:text="Maaltijd"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/meal_description"
+            android:text="@string/meal_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/meal_vegan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_cross"
+            android:text="@string/meal_vegan"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:id="@+id/meal_vegetarian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_cross"
+            android:text="@string/meal_vegetarian"
+            android:layout_marginHorizontal="10dp" />
+
+        <TextView
+            android:id="@+id/meal_date"
+            android:text="@string/meal_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            android:layout_margin="10dp"/>
+
+        <TextView style="@style/section_header"
+            android:text="Kok"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_user"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/cook_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_name"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cook_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_email"
+                    android:textSize="12dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/cook_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_email"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
