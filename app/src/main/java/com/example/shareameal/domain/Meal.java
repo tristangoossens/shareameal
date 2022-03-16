@@ -1,5 +1,11 @@
 package com.example.shareameal.domain;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
@@ -7,56 +13,101 @@ import java.util.Locale;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class Meal {
 
     @SerializedName("id")
     @Expose
+    @PrimaryKey()
     private Integer id;
     @SerializedName("name")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "name")
     private String name;
     @SerializedName("description")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "description")
     private String description;
     @SerializedName("isActive")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "isActive")
     private Boolean isActive;
     @SerializedName("isVega")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "isVega")
     private Boolean isVega;
     @SerializedName("isVegan")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "isVegan")
     private Boolean isVegan;
     @SerializedName("isToTakeHome")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "isToTakeHome")
     private Boolean isToTakeHome;
     @SerializedName("dateTime")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "dateTime")
     private String dateTime;
     @SerializedName("createDate")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "createDate")
     private String createDate;
     @SerializedName("updateDate")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "updateDate")
     private String updateDate;
     @SerializedName("maxAmountOfParticipants")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "maxAmountOfParticipants")
     private Integer maxAmountOfParticipants;
     @SerializedName("price")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "price")
     private String price;
     @SerializedName("imageUrl")
     @Expose
+    @NonNull
+    @ColumnInfo(name = "imageUrl")
     private String imageUrl;
     @SerializedName("allergenes")
     @Expose
+    @Ignore
     private List<Object> allergenes = null;
     @SerializedName("cook")
     @Expose
+    @Ignore
     private Cook cook;
     @SerializedName("participants")
     @Expose
+    @Ignore
     private List<Participant> participants = null;
+
+    public Meal(Integer id, String name, String description, Boolean isActive, Boolean isVega, Boolean isVegan, Boolean isToTakeHome, String dateTime, String createDate, String updateDate, Integer maxAmountOfParticipants, String price, String imageUrl) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isActive = isActive;
+        this.isVega = isVega;
+        this.isVegan = isVegan;
+        this.isToTakeHome = isToTakeHome;
+        this.dateTime = dateTime;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
+        this.maxAmountOfParticipants = maxAmountOfParticipants;
+        this.price = price;
+        this.imageUrl = imageUrl;
+    }
 
     public Meal(Integer id, String name, String description, Boolean isActive, Boolean isVega, Boolean isVegan, Boolean isToTakeHome, String dateTime, String createDate, String updateDate, Integer maxAmountOfParticipants, String price, String imageUrl, List<Object> allergenes, Cook cook, List<Participant> participants) {
         this.id = id;
@@ -134,9 +185,14 @@ public class Meal {
     }
 
     public String getDateTime() {
-        String t = this.dateTime.substring(0, 10);
-        LocalDate d = LocalDate.parse(t);
-        return String.format("%s %s %s", d.getDayOfMonth(), d.getMonth().toString().toLowerCase(), d.getYear());
+        try{
+            String t = this.dateTime.substring(0, 10);
+            LocalDate d = LocalDate.parse(t);
+
+            return String.format("%s %s %s", d.getDayOfMonth(), d.getMonth().toString().toLowerCase(), d.getYear());
+        }catch (Exception e){
+            return this.dateTime;
+        }
     }
 
     public void setDateTime(String dateTime) {
@@ -168,7 +224,7 @@ public class Meal {
     }
 
     public String getPrice() {
-        return String.format("€ %s", this.price);
+        return this.price;
     }
 
     public void setPrice(String price) {

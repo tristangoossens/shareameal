@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MealDetailActivity">
+    tools:context=".presentation.MealDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,8 @@
         <ImageView
             android:id="@+id/meal_image"
             android:layout_width="202dp"
-            android:layout_height="163dp" />
+            android:layout_height="163dp"
+            android:scaleType="fitXY"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +59,7 @@
         android:orientation="vertical">
 
         <TextView style="@style/section_header"
-            android:text="Maaltijd"
+            android:text="@string/meal_detail_header"
             android:layout_marginBottom="5dp"/>
 
         <TextView
@@ -96,7 +97,7 @@
             android:layout_margin="10dp"/>
 
         <TextView style="@style/section_header"
-            android:text="Kok"
+            android:text="@string/cook_detail_header"
             android:layout_marginBottom="5dp"/>
 
         <LinearLayout

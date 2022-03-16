@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Share A Meal</string>
+    <string name="close">Sluiten</string>
+    <string name="open">Openen</string>
+    <string name="meal_list_all">Alle gerechten</string>
+    <string name="meal_vegetarian">Vegetarisch</string>
+    <string name="meal_vegan">Verganistisch</string>
+    <string name="meal_signup">Aanmelden</string>
+    <string name="meal_details">Details</string>
+    <string name="meal_date">Toegevoegd op 1-1-0000</string>
+    <string name="meal_date_prefix">Served on</string>
+    <string name="meal_description">Beschrijving gerecht</string>
+    <string name="meal_price">€ 0,00</string>
+    <string name="meal_detail_info">Details..</string>
+    <string name="meal_name">Naam gerecht</string>
+    <string name="detail_page_label">Gerechtdetails</string>
+    <string name="meal_list_vega">Vergetarisch</string>
+    <string name="meal_list_vegan">Veganistisch</string>
+    <string name="meal_list_count_label">Maaltijden geladen</string>
+    <string name="user_name">Naam gebruiker</string>
+    <string name="user_email">example@mail.nl</string>
+    <string name="meal_detail_header">Maaltijd</string>
+    <string name="cook_detail_header">Kok</string>
+</resources>

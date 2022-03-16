@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 // Interface containing all routes with parsing methods
-public interface ShareAMealApiInterface {
+public interface ShareAMealApiDAO {
     // Get all meals route
     @GET("meal")
     Call<MealListResponse> getMeals();

@@ -1,26 +1,24 @@
 <resources>
     <string name="app_name">Share A Meal</string>
-    <string name="detail_page_label">Gerechtdetails</string>
-
-    <string name="meal_name">Naam gerecht</string>
+    <string name="detail_page_label">Meal details</string>
+    <string name="meal_detail_header">Meal</string>
+    <string name="cook_detail_header">Cook</string>
+    <string name="meal_name">Name meal</string>
     <string name="meal_price">€ 0,00</string>
-    <string name="meal_description">Beschrijving gerecht</string>
-    <string name="meal_date">Toegevoegd op 1-1-0000</string>
+    <string name="meal_detail_info">Details..</string>
+    <string name="meal_description">Description meal</string>
+    <string name="meal_date">Added on 1-1-0000</string>
+    <string name="meal_date_prefix">Served on</string>
     <string name="meal_details">Details</string>
-    <string name="meal_signup">Aanmelden</string>
-
-    <string name="meal_vegan">Veganistisch</string>
-    <string name="meal_vegetarian">Vegetarisch</string>
-
-
-    <string name="meal_list_all">Alles</string>
-    <string name="meal_list_vega">Vega</string>
+    <string name="meal_signup">Sign up</string>
+    <string name="meal_vegan">Vegan</string>
+    <string name="meal_vegetarian">Vegetarian</string>
+    <string name="meal_list_all">All meals</string>
+    <string name="meal_list_vega">Vegetarian</string>
     <string name="meal_list_vegan">Vegan</string>
-
-
-    <string name="user_name">Naam gebruiker</string>
+    <string name="meal_list_count_label">Meals loaded</string>
+    <string name="user_name">Name user</string>
     <string name="user_email">email@mail.com</string>
-
     <string name="open">Open</string>
     <string name="close">Close</string>
 </resources>

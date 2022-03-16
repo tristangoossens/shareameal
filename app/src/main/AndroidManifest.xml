@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shareameal">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,17 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShareAMeal">
         <activity
-            android:name=".MealDetailActivity"
+            android:name=".presentation.MealDetailActivity"
             android:label="Gerecht"
             android:exported="false">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=
-                    "com.example.shareameal.MealListActivity" />
+                    "com.example.shareameal.presentation.MealListActivity" />
         </activity>
         <activity
-            android:name=".MealListActivity"
+            android:name=".presentation.MealListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

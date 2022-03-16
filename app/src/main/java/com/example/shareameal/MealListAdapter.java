@@ -1,6 +1,7 @@
 package com.example.shareameal;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.shareameal.data.ClickListener;
+import com.example.shareameal.data.ShareAMealRoomDatabase;
+import com.example.shareameal.listener.ClickListener;
 import com.example.shareameal.domain.Meal;
+import com.example.shareameal.presentation.MealListActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -21,6 +24,9 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.ViewHo
     private Context context;
     private LayoutInflater inflater;
     private static ClickListener clickListener;
+
+    // Log tag
+    private static final String TAG = MealListAdapter.class.getName();
 
     // Initialize Adapter class with class attributes.
     public MealListAdapter(Context context, List<Meal> mealList){
@@ -45,11 +51,12 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.ViewHo
         // Bind meal data with the given ViewHolder and position
         Meal meal = this.mealList.get(position);
         holder.nameTextView.setText(meal.getName());
-        holder.priceTextView.setText(meal.getPrice());
+        holder.detailTextView.setText(String.format("%s\n%s", String.format("€ %s", meal.getPrice()), meal.getDateTime()));
 
         // Fit image into imageview component using the Picasso library
         Picasso.with(context)
                 .load(meal.getImageUrl())
+                .placeholder(R.drawable.ic_launcher_background)
                 .fit()
                 .into(holder.mealImageView);
     }
@@ -69,14 +76,14 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.ViewHo
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView mealImageView;
         private TextView nameTextView;
-        private TextView priceTextView;
+        private TextView detailTextView;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
 
             this.nameTextView = itemView.findViewById(R.id.meal_list_card_name);
             this.mealImageView = itemView.findViewById(R.id.meal_list_card_image);
-            this.priceTextView = itemView.findViewById(R.id.meal_list_card_price);
+            this.detailTextView = itemView.findViewById(R.id.meal_list_card_details);
 
             // Set the itemView onclick listener to this class (overwritten onClick method)
             itemView.setOnClickListener(this);
